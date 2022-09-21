@@ -31,8 +31,8 @@
 
     // Performing insert query execution
     // here our table name is college
-    $sql = "INSERT INTO CarInfo (carImage, carModel, carPrice, carColor) VALUES (
-			'$carImage','$carModel','$carPrice','$carColor')";
+    $sql = "INSERT INTO CarInfo (carID,carImage, carModel, carPrice, carColor) VALUES (
+			$carID,'$carImage','$carModel','$carPrice','$carColor')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<h3>data stored in a database successfully."
@@ -49,6 +49,10 @@
           <li class='list-group-item'>Price=" . $carPrice . "</li>
           <li class='list-group-item'>Color=" . $carColor . "</li>
         </ul>
+        <div class='container'>
+        <button href='#' class='btn btn-primary'>Edit</button>
+        <button class='btn btn-danger'>Delete</button>
+        </div>
       </div>");
     } else {
         echo "ERROR: Hush! Sorry $sql. "
